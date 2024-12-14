@@ -1,4 +1,5 @@
 import { FaDollarSign, FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const HotJobsCard = ({ job }) => {
@@ -33,11 +34,17 @@ const HotJobsCard = ({ job }) => {
                 </div>
                 <div className="card-actions justify-end items-center mt-4">
                     <p className="flex items-center">Salary: <FaDollarSign></FaDollarSign> {salaryRange.min} - {salaryRange.max} {salaryRange.currency}</p>
-                    <button className="btn btn-primary">Apply</button>
+
+                    <Link to={`/jobs/${_id}`}>
+                        <button className="btn btn-primary">Apply</button>
+                    </Link>
                 </div>
             </div>
         </div>
     );
+
+
 };
+
 
 export default HotJobsCard;
